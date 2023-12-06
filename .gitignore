@@ -1,0 +1,6 @@
+# ignore out/build dir
+out/*
+
+# dependencies
+node_modules/*
+
