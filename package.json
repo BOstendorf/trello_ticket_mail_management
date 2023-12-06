@@ -2,7 +2,7 @@
   "name": "trello_ticket_mail_manager",
   "version": "1.0.0",
   "description": "",
-  "main": "out/index.js",
+  "main": "out/client.js",
   "scripts": {
     "test": "jest --watchAll",
     "prepare": "ts-patch install"
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "source-map-support": "^0.5.21",
+    "typescript_helpers": "file:../typescript_helpers",
     "typia": "^5.2.6"
   }
 }
