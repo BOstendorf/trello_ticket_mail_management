@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Trello Ticket Mail Management</title>
   </head>
   <body>
     <div id="app"></div>
-    <script src="https://p.trellocdn.com/power-up.min.js"></script>
     <script type="module" src="/src/main.ts"></script>
-    <div>This is a trello powerup for managing cards as tickets and sending mails corresponding to the tickets</div>
+    <div>Test Text</div>
   </body>
 </html>
