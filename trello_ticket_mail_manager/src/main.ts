@@ -1,17 +1,21 @@
 import './style.css'
 import { test, stringify } from 'typescript_helpers';
+import { initBadges } from './trello_capabilities/card_badges';
+import { initBoardButtons } from './trello_capabilities/board_buttons';
+
+declare global {
+  interface Window {
+    TrelloPowerUp: any;
+  }
+}
+
+//alert("test alert");
 
 window.TrelloPowerUp.initialize({
-  "card-badges": async function (t: any, options: any) {
-    console.log("called card-badges function");
-    let cardId = await t.card('id').get('id');
-      console.log(stringify("test"));
-    return [
-      {
-        text: cardId,
-        color: "red"
-      }
-    ]
+  "card-badges": initBadges, 
+  "board-buttons": initBoardButtons,
+  "card-buttons": async function (t: any, options: any) {
+
   }
 })
 
