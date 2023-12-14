@@ -15,7 +15,7 @@ function addMailCallback(t: TrelloInterface) {
   //return t.popup({title: "Add Mail to report to", items: [popupItem]});
   t.popup({
     title: 'Add Mail Listener',
-    url: './pages/card_button',
+    url: './card_button',
     height: 75
   })
 }
