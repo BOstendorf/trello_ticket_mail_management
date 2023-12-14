@@ -1,6 +1,7 @@
 import { stringify } from "typescript_helpers";
 import { sampleIcon } from "./sampleIcon";
-import { TrelloBoardButton, TrelloInterface, TrelloInterfaceOptions } from "./shared_definitions";
+import { TrelloInterface, TrelloInterfaceOptions } from "./shared_definitions";
+import { TrelloBoardButton } from "./definitions/TrelloButton";
 
 
 function boardButtonCallback(t: TrelloInterface) {

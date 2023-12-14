@@ -1,13 +1,8 @@
-type TrelloIdString = string;
-type TrelloAPI_scope = "board" | "card" | "member" | "organization" | TrelloIdString;
-type TrelloAPI_visibility = "shared" | "private";
-type TrelloAPI_key = string;
-type Serializable = string | number | boolean | {
-  [key: string|number]: Serializable;
-}
+import { TrelloPopupFunction } from "./definitions/TrelloPopup";
+import { TrelloGetFunction } from "./definitions/TrelloGet";
+import { TrelloSetFunction } from "./definitions/TrelloSet";
 
-type TrelloSingleKeySet = (scope: TrelloAPI_scope, visibility: TrelloAPI_visibility, key: string, value: Serializable) => void;
-type TrelloMultiKeySet = (scope: TrelloAPI_scope, visibility: TrelloAPI_visibility, values: {[key: string]: Serializable}) => void;
+
 export type TrelloInterface = {
   list: any;
   lists: any;
@@ -16,8 +11,9 @@ export type TrelloInterface = {
   member: any;
   board: any;
   getContext: any;
-  get: (scope: TrelloAPI_scope, visibility: TrelloAPI_visibility, key?: TrelloAPI_key, default_value?: any) => any;
-  set: TrelloSingleKeySet | TrelloMultiKeySet;
+  get: TrelloGetFunction;
+  set: TrelloSetFunction;
+  popup: TrelloPopupFunction;
   getAll: () => any;
 };
 const t_types = [
@@ -26,8 +22,6 @@ const t_types = [
   "memberCanWriteToModel",
   "requestWithContext",
   "getAll",
-  "get",
-  "set",
   "remove",
   "safe",
   "arg",
@@ -85,33 +79,5 @@ const t_types = [
 ]
 export type TrelloInterfaceOptions = any;
 
-export type TrelloIcon = {
-  dark: string;
-  light: string;
-}
-/*
- * reference https://developer.atlassian.com/cloud/trello/power-ups/capabilities/board-buttons/
-admin - User is an admin of the board
-edit - User can edit the board
-readOnly - User can not edit the board.
-signedIn - User is logged into Trello.
-signedOut - User is not logged into Trello.
-always - Always show.
 
-The default is edit
-*/
-type TrelloBoardButtonCondition = "edit" | "admin" | "readOnly" | "signedIn" | "signedOut" | "always"
 
-type TrelloBoardButton_base = {
-  icon: TrelloIcon;
-  text: string;
-  condition: TrelloBoardButtonCondition;
-}
-
-type TrelloBoardButton_url = TrelloBoardButton_base & { url: string; target?: string };
-
-type TrelloBoardButton_callback = TrelloBoardButton_base & { callback: Function };
-
-export type TrelloBoardButton = TrelloBoardButton_url | TrelloBoardButton_callback;
-
-export type TrelloCardButton = TrelloBoardButton;
