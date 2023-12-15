@@ -19,6 +19,7 @@ export type TrelloInterface = {
   set: TrelloSetFunction;
   popup: TrelloPopupFunction;
   getAll: () => any;
+  arg: (str: string) => any;
 };
 const t_types = [
   "getContext",
