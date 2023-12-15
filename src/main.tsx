@@ -6,10 +6,11 @@ import { initBadges } from './trello_capabilities/card_badges';
 import { initBoardButtons } from './trello_capabilities/board_buttons';
 import { initCardButtons } from './trello_capabilities/card_buttons';
 import AddListenerMail from './trello_capabilities/iframes/card_buttons/AddListenerMail';
+import { TrelloPowerUpWindowObject } from './trello_capabilities/shared_definitions';
 
 declare global {
   interface Window {
-    TrelloPowerUp: any;
+    TrelloPowerUp: TrelloPowerUpWindowObject;
   }
 }
 

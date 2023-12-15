@@ -2,6 +2,10 @@ import { TrelloPopupFunction } from "./definitions/TrelloPopup";
 import { TrelloGetFunction } from "./definitions/TrelloGet";
 import { TrelloSetFunction } from "./definitions/TrelloSet";
 
+export type TrelloPowerUpWindowObject = {
+  iframe: () => TrelloInterface;
+  initialize: (capability_init_object: any) => void;
+}
 
 export type TrelloInterface = {
   list: any;
