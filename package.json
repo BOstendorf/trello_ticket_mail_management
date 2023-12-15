@@ -13,7 +13,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
-    "typescript_helpers": "file:../typescript_helpers"
+    "typescript_helpers": "file:../typescript_helpers",
+    "typia": "^5.3.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
