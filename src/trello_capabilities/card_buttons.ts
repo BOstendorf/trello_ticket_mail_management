@@ -4,7 +4,7 @@ import { TrelloCardButton } from "./definitions/TrelloButton";
 import { TrelloPopupItem } from "./definitions/TrelloPopup";
 import { stringify } from "typescript_helpers";
 
-function addMailCallback(t: TrelloInterface) {
+async function addMailCallback(t: TrelloInterface) {
   //t.get('card', 'shared', 'id', 'test');
   //let name = t.card('name');
   //let popupItem: TrelloPopupItem = {
@@ -13,10 +13,12 @@ function addMailCallback(t: TrelloInterface) {
   //}
   //alert(stringify([popupItem, name]));
   //return t.popup({title: "Add Mail to report to", items: [popupItem]});
+  let cardId = await t.card('id').get('id');
   t.popup({
     title: 'Add Mail Listener',
     url: './card_button',
-    height: 75
+    height: 128,
+    args: { triggeringCardId: cardId }
   })
 }
 
