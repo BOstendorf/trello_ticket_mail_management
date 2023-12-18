@@ -8,6 +8,7 @@ import { initCardButtons } from './trello_capabilities/card_buttons';
 import AddListenerMail from './trello_capabilities/iframes/card_buttons/AddListenerMail';
 import { TrelloPowerUpWindowObject } from './trello_capabilities/shared_definitions';
 import RegisteredMails from './trello_capabilities/iframes/card_back_section/RegisteredMails';
+import { AddMailForm } from './trello_capabilities/iframes/ui_elements/AddEmailForm';
 
 declare global {
   interface Window {
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </Route>
       <Route path='/card_button' element={<AddListenerMail />} />
       <Route path="/card_back_section" element={<RegisteredMails />}/>
+      <Route path="testing" element={<AddMailForm confirmCallback={(mail: string)=>{console.log(mail)} }/>} />
     </Routes>
   </BrowserRouter>
 )
