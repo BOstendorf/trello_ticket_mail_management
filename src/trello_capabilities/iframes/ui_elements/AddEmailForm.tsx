@@ -26,7 +26,7 @@ export function AddMailForm({ confirmCallback }: { confirmCallback: (mail: strin
       </label>
       <input type="email"
         id="email"
-        className={`bg-gray-200 border text-gray-900 text-sm rounded-lg block w-full p-1 ${!mailValid ? 'border-red-400 hover:border-red-500 focus:border-red-500' : 'border-gray-200 hover:border-gray-400 focus:ring-blue-500 focus:border-blue-500'}`}
+        className={`bg-gray-200 border text-gray-900 text-sm rounded-lg block w-full p-1 ${!mailValid ? 'hover:border-red-500 focus:border-red-500' : 'border-gray-200 hover:border-gray-400 focus:ring-blue-500 focus:border-blue-500'}`}
         onChange={(event) => { onInputChange(event.target.value) }}
         placeholder="Mail" />
       <button
