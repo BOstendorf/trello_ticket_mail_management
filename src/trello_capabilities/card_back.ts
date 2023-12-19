@@ -10,7 +10,7 @@ export function initCardBackSection(t: TrelloInterface, options: TrelloInterface
     icon: sampleIcon.dark,
     content: {
       type: "iframe",
-      url: './card_back_section',
+      url: t.signUrl('./card_back_section'),
       height: RegisteredMailsSectionHeight,
     },
     action: {
