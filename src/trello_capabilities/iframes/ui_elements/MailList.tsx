@@ -22,8 +22,8 @@ export default function MailList({mails}: {mails: mailEntry[]}) {
   return <div>
     <ul className={"space-y-3 border-2 border-indigo-400 rounded-lg p-3"}>
       {
-        ((!isList(mails) || mails.length === 0) && tmpArray.map((mail: string) => <MailItem mail={mail} deleteCallback={()=>{console.log("delete mail")}}/>)) ||
-          mails.map(({mail, deleteCallback}: {mail: string; deleteCallback: Function})=> <MailItem mail={mail} deleteCallback={deleteCallback}/>)
+        ((!isList(mails) || mails.length === 0) && tmpArray.map((mail: string, count: number) => <MailItem key={count} mail={mail} deleteCallback={()=>{console.log("delete mail")}}/>)) ||
+          mails.map(({mail, deleteCallback}: {mail: string; deleteCallback: Function}, count: number)=> <MailItem key={count} mail={mail} deleteCallback={deleteCallback}/>)
       }
     </ul>
   </div>
