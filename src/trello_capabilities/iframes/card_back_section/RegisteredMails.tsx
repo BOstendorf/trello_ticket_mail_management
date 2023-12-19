@@ -1,6 +1,7 @@
 import { AddMailForm } from "../ui_elements/AddEmailForm";
 import MailList from "../ui_elements/MailList";
 
+export const RegisteredMailsSectionHeight = 320;
 
 export default function RegisteredMails() {
 
