@@ -1,9 +1,8 @@
 import { TrelloInterface } from "../shared_definitions";
-import { TrelloIcon } from "./TrelloIcon";
 
 export type TrelloCardBackSection = {
   title: string;
-  icon: TrelloIcon;
+  icon: string;
   content: {
     type: "iframe";
     url: string;
