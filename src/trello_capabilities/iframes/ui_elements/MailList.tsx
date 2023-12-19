@@ -2,7 +2,12 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { isList } from "typescript_helpers";
 
-function MailItem({ mail, deleteCallback }: { mail: string; deleteCallback: Function }) {
+export type mailEntry = {
+  mail: string;
+  deleteCallback: Function;
+}
+
+function MailItem({ mail, deleteCallback }: mailEntry) {
   return <div className={"flex items-center gap-x-2.5 "}>
     <button className={"inline-flex p-1 align-middle items-center justify-center text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-full focus:shadow-outline hover:bg-indigo-800"}>
       <FontAwesomeIcon className={"w-4 h-4"} icon={faXmark} />
@@ -11,7 +16,7 @@ function MailItem({ mail, deleteCallback }: { mail: string; deleteCallback: Func
   </div>
 }
 
-export default function MailList({mails}: {mails: {mail: string; deleteCallback: Function}[]}) {
+export default function MailList({mails}: {mails: mailEntry[]}) {
   const tmpArray = ["aid", "eascs", "sacidnhesr", "saicdhes"];
 
   return <div>
