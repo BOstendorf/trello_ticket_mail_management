@@ -9,7 +9,7 @@ export default function RegisteredMails() {
 
   }
 
-  return <div className={"p-2 rounded-lg bg-white"}>
+  return <div className={"p-2 rounded-lg bg-white h-80"}>
     <AddMailForm confirmCallback={confirmCallback} />
     <MailList mails={[]}/>
   </div>
