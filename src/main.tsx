@@ -9,6 +9,7 @@ import AddListenerMail from './trello_capabilities/iframes/card_buttons/AddListe
 import { TrelloPowerUpWindowObject } from './trello_capabilities/shared_definitions';
 import RegisteredMails from './trello_capabilities/iframes/card_back_section/RegisteredMails';
 import { AddMailForm } from './trello_capabilities/iframes/ui_elements/AddEmailForm';
+import { initCardBackSection } from './trello_capabilities/card_back';
 
 declare global {
   interface Window {
@@ -34,6 +35,7 @@ window.TrelloPowerUp.initialize({
   "card-badges": initBadges,
   "board_buttons": initBoardButtons,
   "card-buttons": initCardButtons,
+  "card-back-section": initCardBackSection,
 })
 
 
