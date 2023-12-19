@@ -9,7 +9,7 @@ export type mailEntry = {
 
 function MailItem({ mail, deleteCallback }: mailEntry) {
   return <div className={"flex items-center gap-x-2.5 "}>
-    <button className={"inline-flex p-1 align-middle items-center justify-center text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-full focus:shadow-outline hover:bg-indigo-800"}>
+    <button onClick={()=>{deleteCallback()}} className={"inline-flex p-1 align-middle items-center justify-center text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-full focus:shadow-outline hover:bg-indigo-800"}>
       <FontAwesomeIcon className={"w-4 h-4"} icon={faXmark} />
     </button>
     <li className={"flex space-x-3 align-middle"}>{mail}</li>
