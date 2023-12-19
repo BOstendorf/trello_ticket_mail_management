@@ -20,6 +20,7 @@ export type TrelloInterface = {
   popup: TrelloPopupFunction;
   getAll: () => any;
   arg: (str: string) => any;
+  signUrl: (url: string, args?: any) => string; 
 };
 const t_types = [
   "getContext",
